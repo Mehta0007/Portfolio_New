@@ -2,6 +2,7 @@ import ColorGame from "@/components/ColorGame";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import LifeAdviceDice from "@/components/LifeAdviceDice";
 import LinksBar from "@/components/LinksBar";
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsTable from "@/components/SkillsTable";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Hero />
       <LinksBar />
       <ColorGame />
+      <LifeAdviceDice />
       <SkillsTable />
       <ProjectsSection />
       <Footer />

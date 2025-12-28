@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import RetroButton from "./ButtonHoverAnimation";
 
 export default function ColorGame() {
   const [gameStarted, setGameStarted] = useState(false);
@@ -9,12 +10,11 @@ export default function ColorGame() {
   return (
     <section className="space-y-3">
       {!gameStarted && (
-        <button
-          onClick={() => setGameStarted(true)}
-          className="border px-3 py-1 rounded"
-        >
-          Play game???
-        </button>
+    
+        <RetroButton onClick={() => setGameStarted(true)} >
+
+            Play game???
+        </RetroButton>
       )}
 
       {gameStarted && color === null && (
@@ -33,21 +33,18 @@ export default function ColorGame() {
         <div className="space-y-2">
           <p>Great... now it's ruined!</p>
 
-          <button
-            onClick={() => {
+        
+          <RetroButton   onClick={() => {
               setColor(null);
               setGameStarted(false);
-            }}
-            className="border px-3 py-1 rounded"
-          >
+            }} >
+
             Reset
-          </button>
+          </RetroButton>
         </div>
       )}
 
-      {color && (
-        <style>{`body { background: ${color}; }`}</style>
-      )}
+      {color && <style>{`body { background: ${color}; }`}</style>}
     </section>
   );
 }

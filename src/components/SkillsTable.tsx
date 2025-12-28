@@ -1,72 +1,98 @@
 export default function SkillsTable() {
   return (
-    <section>
-      <h2 className="text-2xl font-semibold mb-2">Skills</h2>
+    <section className="space-y-6">
+      <h2 className="text-2xl font-semibold">Skills</h2>
 
-      <table className="w-full border">
-        <thead>
-          <tr className="border">
-            <th className="border p-2">Area</th>
-            <th className="border p-2">Technologies</th>
-          </tr>
-        </thead>
+      {/* Main skills */}
+      <div className="grid md:grid-cols-2 gap-4">
+        {/* Frontend */}
+        <SkillCard
+          title="Front-End"
+          items={[
+            "HTML5",
+            "CSS3",
+            "TailwindCSS",
+            "JavaScript",
+            "ReactJS",
+            "Next.js",
+          ]}
+        />
 
-        <tbody>
-          <tr>
-            <td className="border p-2">Front-End</td>
-            <td className="border p-2">
-              HTML5 | CSS3 | TailwindCSS | JavaScript | ReactJS | Next.js
-            </td>
-          </tr>
+        {/* Backend */}
+        <SkillCard
+          title="Back-End"
+          items={[
+            "NodeJS",
+            "ExpressJS",
+            "MongoDB",
+            "Mongoose",
+            "GraphQL",
+            "PostgreSQL",
+          ]}
+        />
 
-          <tr>
-            <td className="border p-2">Back-End</td>
-            <td className="border p-2">
-              NodeJS | ExpressJS | MongoDB | Mongoose | GraphQL | PostgresSQL
-            </td>
-          </tr>
+        {/* Tools */}
+        <SkillCard
+          title="Tools & Platforms"
+          items={["Git", "GitHub", "CI/CD", "Clerk"]}
+        />
 
-          <tr>
-            <td className="border p-2">Tools & Platforms</td>
-            <td className="border p-2">Git | GitHub | CI/CD | Clerk</td>
-          </tr>
+        {/* Testing */}
+        <SkillCard
+          title="Testing"
+          items={["Jest", "Postman"]}
+        />
+      </div>
 
-          <tr>
-            <td className="border p-2">Testing tools</td>
-            <td className="border p-2">Jest | Postman</td>
-          </tr>
-        </tbody>
-      </table>
+      {/* Currently learning */}
+      <div>
+        <h3 className="text-lg font-medium mb-2">Currently Learning</h3>
 
-    <table className="w-full border mt-6">
-        <thead>
-            <tr>
-                <th className="p-2">Currently Learning</th>
-            </tr>
-        </thead>
-    <tbody>
-        <tr className="border ">
-            <td className="p-2" >TypeScript </td>
-        </tr>
-        <tr className="border">
-            <td className="p-2">Next.js App Router </td>
-        </tr>
-        <tr className="border">
-            <td className="p-2">Backend architecture </td>
-        </tr>
-        <tr className="border">
-            <td className="p-2">GraphQL </td>
-        </tr>
-        <tr className="border">
-            <td className="p-2">DevOps Basics </td>
-        </tr>
-        <tr className="border">
-            <td className="p-2">System Design Basics </td>
-        </tr>
-    </tbody>
-    </table>
-
-
+        <div className="flex flex-wrap gap-2">
+          {[
+            "TypeScript",
+            "Next.js App Router",
+            "Backend Architecture",
+            "GraphQL",
+            "DevOps Basics",
+            "System Design Basics",
+          ].map((item) => (
+            <span
+              key={item}
+              className="px-3 py-1 border rounded-full text-sm"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
     </section>
+  );
+}
+
+/* ------------------ small reusable card ------------------ */
+
+function SkillCard({
+  title,
+  items,
+}: {
+  title: string;
+  items: string[];
+}) {
+  return (
+    <div className="border rounded-xl p-4 bg-[#f8f5f2] shadow-sm">
+      <h4 className="font-semibold mb-2">{title}</h4>
+
+      <div className="flex flex-wrap gap-2">
+        {items.map((item) => (
+          <span
+            key={item}
+            className="px-2 py-0.5 border rounded-full text-xs"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }

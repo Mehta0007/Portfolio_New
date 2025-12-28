@@ -1,43 +1,61 @@
 export default function ProjectCard() {
   return (
-    <div className="border p-4 rounded-lg flex flex-col md:flex-row gap-4">
-      <div className="space-y-2">
-        <p>Jan 19, 2025</p>
+    <div
+      className="
+        border rounded-2xl p-4
+        hover:-translate-y-1
+        transition-all duration-200
+        shadow-sm
+        hover:shadow-md
+        bg-[#f8f5f2]
+      "
+    >
+      <div className="flex flex-col md:flex-row gap-4">
 
-        <h4 className="text-xl font-semibold">Brogram</h4>
+        {/* left */}
+        <div className="flex-1 space-y-2">
+          <p className="text-xs text-gray-600">Jan 19, 2025</p>
 
-        <div className="flex gap-2 flex-wrap">
-          <span className="border px-2 py-1 rounded">ReactJS</span>
-          <span className="border px-2 py-1 rounded">FantaCSS</span>
-          <span className="border px-2 py-1 rounded">JavaScript</span>
+          <h3 className="text-xl font-semibold">Brogram</h3>
+
+          <div className="flex flex-wrap gap-2">
+            <span className="px-2 py-0.5 border rounded-full text-xs">ReactJS</span>
+            {/* <span className="px-2 py-0.5 border rounded-full text-xs">FantaCSS</span> */}
+            <span className="px-2 py-0.5 border rounded-full text-xs">JavaScript</span>
+          </div>
+
+          <p className="text-sm text-gray-700 max-w-lg">
+            A simple 30-workouts training plan app.
+          </p>
+
+          <div className="flex gap-4 text-sm">
+            <a
+              target="_blank"
+              href="https://brogram-workout-app.vercel.app/"
+              className="underline"
+            >
+              Live
+            </a>
+
+            <a
+              target="_blank"
+              href="https://github.com/Mehta0007/Brogram_workout_app"
+              className="underline"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
 
-        <p>The Simple 30 Workouts Training Plan.</p>
-
-        <div className="flex gap-3">
-          <a
-            href="https://brogram-workout-app.vercel.app/"
-            target="_blank"
-            className="underline"
-          >
-            Live
-          </a>
-
-          <a
-            href="https://github.com/Mehta0007/Brogram_workout_app"
-            target="_blank"
-            className="underline"
-          >
-            GitHub
-          </a>
+        {/* right */}
+        <div className="md:w-60">
+          <img
+            src="https://github.com/jamezmca/1_web_portfolio/blob/main/public/brogram.png?raw=true"
+            className="rounded-lg border"
+            alt="Brogram preview"
+          />
         </div>
       </div>
-
-      <img
-        src="https://github.com/jamezmca/1_web_portfolio/blob/main/public/brogram.png?raw=true"
-        alt="brogram-thumbnail"
-        className="w-full md:w-64 rounded"
-      />
     </div>
   );
 }
