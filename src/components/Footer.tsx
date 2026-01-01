@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="text-center py-8 text-sm text-gray-600">
       By{" "}
       <a
-        href="https://www.smoljames.com"
+        href="/"
         target="_blank"
         className="underline"
       >

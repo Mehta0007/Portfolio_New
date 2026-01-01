@@ -3,8 +3,8 @@ export default function LinksBar() {
     <div className="flex gap-4 items-center">
       <span>➡️</span>
 
-      <a href="mailto:jamesmca@live.com" className="underline">
-        Email me
+      <a href="https://x.com/MehtaAnkit07" className="underline">
+        X
       </a>
 
       <a href="https://github.com/Mehta0007" target="_blank" className="underline">
