@@ -45,21 +45,14 @@ export default function Header() {
       </h1>
 
       <nav className="flex gap-4 text-sm">
-        <a
-          href="https://github.com/Mehta0007"
+          <a
+          href="/blog"
           target="_blank"
           className="hover:opacity-70 transition-opacity"
         >
-          GitHub
+          Blog
         </a>
-
-        <a
-          href="https://www.linkedin.com/in/ankit-mehta-7340b034a/"
-          target="_blank"
-          className="hover:opacity-70 transition-opacity"
-        >
-          LinkedIn
-        </a>
+       
       </nav>
     </header>
   );

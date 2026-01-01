@@ -1,0 +1,22 @@
+
+
+:root {
+  --bg: #f8f5f2;
+  --fg: #111;
+  --muted: #555;
+  --card: rgba(255, 255, 255, 0.7);
+  --border: #ddd;
+}
+
+html.dark {
+  --bg: #0c0c0c;
+  --fg: #e9e6df;
+  --muted: #b0aca3;
+  --card: rgba(22, 22, 22, 0.9);
+  --border: #2a2a2a;
+}
+
+html {
+  transition: background-color .25s ease, color .25s ease;
+}
+
