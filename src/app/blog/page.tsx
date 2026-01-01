@@ -67,38 +67,35 @@ export default function BlogPage() {
 
           return (
             <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <div
-  className="group rounded-xl p-5 transition hover:-translate-y-[2px] hover:shadow-sm border"
+            <div
+  className="group rounded-xl p-5 transition border hover:-translate-y-[3px] relative"
   style={{
     background: "var(--card)",
     borderColor: "var(--border)",
+    boxShadow:
+      "0 4px 16px rgba(0,0,0,0.04), inset 0 0 0 0 rgba(0,0,0,0)",
   }}
 >
+  <div className="flex items-center justify-between">
+    <h2 className="text-xl font-medium">
+      {post.title}
+      <span className="opacity-0 group-hover:opacity-100 transition ml-1">
+        →
+      </span>
+    </h2>
+  </div>
 
-                <div className="flex justify-between items-start">
-                  <h2 className="text-xl font-medium">
-                    {post.title}
-                    <span className="opacity-0 group-hover:opacity-100 transition ml-1">
-                      →
-                    </span>
-                  </h2>
-                </div>
+  <p className="text-sm"
+     style={{ color: "var(--muted)" }}>
+    {formattedDate} • {post.readTime}
+  </p>
 
-                <p className="text-sm text-neutral-600 mt-[2px]"
-                style={{ color: "var(--muted)" }}
+  <p className="mt-2" style={{ color: "var(--fg)" }}>
+    {post.summary}
+  </p>
 
-                >
-                  {formattedDate} • {post.readTime}
-                </p>
+</div>
 
-                <p className="text-neutral-700 mt-2"
-                style={{ color: "var(--muted)" }}
-
-                >
-                  {post.summary}
-                </p>
-
-              </div>
             </Link>
           );
         })}
