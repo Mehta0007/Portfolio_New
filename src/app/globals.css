@@ -1,3 +1,41 @@
 @import "tailwindcss";
 
 
+pre {
+  padding: 14px;
+  border-radius: 12px;
+  overflow-x: auto;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+html.dark pre {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+code {
+  font-family: Menlo, Monaco, 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+/* required wrapper */
+[data-rehype-pretty-code-fragment] {
+  position: relative;
+}
+
+/* code lines */
+[data-rehype-pretty-code-fragment] pre code {
+  display: grid;
+}
+
+/* tokens should inherit shiki theme colors */
+[data-rehype-pretty-code-fragment] span {
+  color: inherit;
+}
+
+/* dark/light theme hook */
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+}

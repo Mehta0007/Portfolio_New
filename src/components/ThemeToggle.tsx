@@ -14,6 +14,7 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
+    
   }, [dark]);
 
   function toggle() {
@@ -23,11 +24,21 @@ export default function ThemeToggle() {
   }
 
   return (
+    <>
+<a href="https://medium.com/@ankitmmehta08"
+
+className="  px-3 py-1 text-sm underline"
+>Medium</a>
+<a href="https://dev.to/mehta0007"
+
+className="  px-3 py-1 text-sm underline"
+>Dev.to</a>
    <button
   onClick={toggle}
-  className="border rounded-full px-3 py-1 text-sm transition hover:-translate-y-[1px]"
+  className="border rounded-full px-3 py-1 text-sm transition hover:-translate-y-[2px]"
 >
   {dark ? "☀️" : "🌙"}
 </button>
+  </>
   );
 }

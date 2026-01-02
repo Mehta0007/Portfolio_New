@@ -30,6 +30,11 @@ export default function BlogPage() {
 
   return (
     <section className="max-w-2xl mx-auto py-14">
+      <div className="mb-6 rounded-xl border px-4 py-3 text-sm"
+     style={{ background: "var(--card)", borderColor: "var(--border)" }}>
+  🚧 <strong>Blog in progress:</strong> I’m setting things up. Posts will appear here soon.
+</div>
+
 
       {/* Header */}
       <div className="flex items-center justify-between mb-8">

@@ -6,6 +6,9 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
+import rehypePrettyCode from "rehype-pretty-code";
+import prettyCodeOptions from "@/lib/prettyCodeOptions";
+
 
 export default async function BlogPost({
   params,
@@ -38,8 +41,10 @@ export default async function BlogPost({
   >
     ← Back
   </Link>
+<div className="shrink-0">
 
   <ThemeToggle />
+</div>
 </div>
 
       <h1 className="text-3xl font-semibold mt-2">
@@ -58,7 +63,15 @@ export default async function BlogPost({
       <div className="h-px bg-neutral-300 my-4" />
 
       <div className="prose prose-neutral">
-        <MDXRemote source={content} />
+        <MDXRemote
+  source={content}
+  options={{
+    mdxOptions: {
+      rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
+    },
+  }}
+/>
+
       </div>
     </article>
   );
