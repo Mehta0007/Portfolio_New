@@ -50,7 +50,7 @@ export default function Header() {
           target="_blank"
           className="hover:opacity-70 transition-opacity"
         >
-          Blog
+          Blog.
         </a>
        
       </nav>
